@@ -3,6 +3,7 @@
     <h3>{{guest.name}}</h3>
     <p>{{guest.email}}</p>
     <p>{{checkInStatus()}}</p>
+    <button type="button" name="delete">Delete</button>
   </div>
 </template>
 
