@@ -14,8 +14,8 @@
 
         <label for="checkedin">Checked in status:</label>
         <select v-model="checkedin" >
-          <option value="">Checked in</option>
-          <option value="">Not checked in</option>
+          <option value="true">Checked in</option>
+          <option value="false">Not checked in</option>
         </select>
         <input type="submit" value="Save">
       </form>
@@ -62,7 +62,8 @@ export default {
       }
       console.log("guest:", updatedGuest);
       GuestService.updateGuest(updatedGuest, this.guest._id)
-      .then(res => eventBus.$emit('guest-updated', res))
+      .then(res => eventBus.$emit('guest-updated', res));
+      this.showUpdate = !this.showUpdate;
     }
   }
 }

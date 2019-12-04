@@ -9,8 +9,8 @@
 
       <label for="checkedin">Checked in status:</label>
       <select v-model="checkedin">
-        <option value="">Checked in</option>
-        <option value="">Not checked in</option>
+        <option value="true">Checked in</option>
+        <option value="false">Not checked in</option>
       </select>
       <input type="submit" value="Save">
     </form>
