@@ -4,7 +4,7 @@ export default {
   getGuests(){
     return fetch(baseURL)
     .then(res => res.json())
-  }
+  },
 
   addGuest(payload) {
     return fetch(baseURL, {

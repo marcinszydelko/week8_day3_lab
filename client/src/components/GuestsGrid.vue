@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import {eventBus} from '../main.js'
 import GuestDetail from './GuestDetail'
 import GuestService from '../services/GuestService.js'
 export default {
@@ -20,6 +21,10 @@ export default {
   mounted() {
     GuestService.getGuests()
     .then(guests => this.guests = guests);
+
+    eventBus.$on('guestAdded', guest => {
+      this.guests.push(guest)
+    })
   }
 }
 </script>
