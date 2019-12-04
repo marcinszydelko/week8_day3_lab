@@ -3,10 +3,10 @@
     <form class="" v-on:submit="saveGuest">
       <label for="name">Name:</label>
       <input type="text" v-model="name" required>
-
+      <br>
       <label for="email">Email:</label>
       <input type="email" v-model="email" required>
-
+      <br>
       <label for="checkedin">Checked in status:</label>
       <select v-model="checkedin">
         <option value="true">Checked in</option>
@@ -49,5 +49,23 @@ export default {
 
 
 <style scoped>
+form {
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 15px 20px;
+  width: 300px;
+  background-color: lightgray;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+
+input {
+  margin-bottom: 10px;
+}
+
+label{
+  margin-right: 8px;
+}
 
 </style>

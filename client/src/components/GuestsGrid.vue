@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="">
+  <div class="grid">
     <GuestDetail v-for="guest in guests" :guest="guest" />
   </div>
 </template>
@@ -40,4 +40,9 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 </style>

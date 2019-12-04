@@ -1,17 +1,21 @@
 <template lang="html">
-  <div class="">
+  <div class="grid-element">
+    <table>
+      
+    </table>
     <h3>{{guest.name}}</h3>
     <p>{{guest.email}}</p>
     <p>{{checkInStatus()}}</p>
     <button @click="buttonDelete" type="button" name="delete">Delete</button>
     <button @click="buttonUpdate" type="button" name="update">Update</button>
+    <br><br>
       <form v-if="showUpdate" v-on:submit="saveUpdate" >
         <label for="name">Name:</label>
         <input type="text" v-model="name" >
-
+        <br>
         <label for="email">Email:</label>
         <input type="email" v-model="email" >
-
+        <br>
         <label for="checkedin">Checked in status:</label>
         <select v-model="checkedin" >
           <option value="true">Checked in</option>
@@ -70,5 +74,20 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.grid-element{
+  border: 1px solid grey;
+  border-radius: 5px;
+  width: 300px;
+  padding: 20px;
+  background-color: lightgray;
+  font-size: 20px;
+}
 
+input {
+  margin-bottom: 10px;
+}
+
+label{
+  margin-right: 8px;
+}
 </style>
