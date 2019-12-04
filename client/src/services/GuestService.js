@@ -13,7 +13,12 @@ export default {
       headers: { 'Content-Type': 'application/json' }
     })
     .then(res => res.json())
-  }
+  },
 
+  deleteGuest(id){
+    return fetch(baseURL + id, {
+      method: 'DELETE'
+    })
+  }
 
 }

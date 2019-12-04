@@ -25,6 +25,11 @@ export default {
     eventBus.$on('guestAdded', guest => {
       this.guests.push(guest)
     })
+
+    eventBus.$on('guest-deleted', id => {
+        const index = this.guests.findIndex(guest => guest._id ===id)
+        this.guests.splice(index, 1)
+    })
   }
 }
 </script>
