@@ -52,8 +52,15 @@ export default {
     buttonUpdate(){
       return this.showUpdate = true;
     },
-    saveUpdate(){
-      
+    saveUpdate(event){
+      event.preventDefault()
+      const guest = {
+        name: this.name,
+        email: this.email,
+        checkedin: this.checkedin
+      }
+      GuestService.updateGuest(guest)
+      .then(res => eventBus.$emit('guest-updated', res))
     }
   }
 }
