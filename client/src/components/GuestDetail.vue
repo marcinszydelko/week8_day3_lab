@@ -54,12 +54,14 @@ export default {
     },
     saveUpdate(event){
       event.preventDefault()
-      const guest = {
+      const updatedGuest = {
+        // _id: this.guest._id,
         name: this.name,
         email: this.email,
         checkedin: this.checkedin
       }
-      GuestService.updateGuest(guest)
+      console.log("guest:", updatedGuest);
+      GuestService.updateGuest(updatedGuest, this.guest._id)
       .then(res => eventBus.$emit('guest-updated', res))
     }
   }
