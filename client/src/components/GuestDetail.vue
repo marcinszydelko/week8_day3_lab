@@ -53,12 +53,12 @@ export default {
       return this.showUpdate = true;
     },
     saveUpdate(){
-
+      
     }
   }
 }
 </script>
 
 <style lang="css" scoped>
-  
+
 </style>
