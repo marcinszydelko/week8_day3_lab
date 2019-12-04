@@ -29,9 +29,9 @@ import  GuestService from '../services/GuestService.js'
 export default {
   data(){
     return{
-      name: "",
-      email: "",
-      checkedin: null,
+      name: this.guest.name,
+      email: this.guest.email,
+      checkedin: this.guest.checkedin,
       showUpdate: false
     }
   },
@@ -39,7 +39,7 @@ export default {
   props: ['guest'],
   methods: {
     checkInStatus(){
-      if(this.guest.checkedin){
+      if(this.guest.checkedin === "true"){
         return "Checked in"
       }else {
         return "Not checked in"
