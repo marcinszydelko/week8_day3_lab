@@ -2,10 +2,10 @@
   <div class="">
     <form class="" v-on:submit="saveGuest">
       <label for="name">Name:</label>
-      <input type="text" v-model="name" >
+      <input type="text" v-model="name" required>
 
       <label for="email">Email:</label>
-      <input type="email" v-model="email">
+      <input type="email" v-model="email" required>
 
       <label for="checkedin">Checked in status:</label>
       <select v-model="checkedin">
@@ -39,8 +39,9 @@ export default {
       }
       GuestService.addGuest(guest)
       .then(res => eventBus.$emit("guestAdded", res))
-
-
+      this.name = "";
+      this.email = "";
+      this.checkedin = null;
     }
   }
 }
